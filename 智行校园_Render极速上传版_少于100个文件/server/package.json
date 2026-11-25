@@ -1,0 +1,13 @@
+{
+  "name": "zhixing-campus-local-server",
+  "version": "1.2.8",
+  "private": true,
+  "description": "Local campus events API and admin, Node built-ins only",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

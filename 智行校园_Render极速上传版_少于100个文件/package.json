@@ -1,0 +1,10 @@
+{
+  "name": "zhixing-campus",
+  "version": "1.2.8",
+  "private": true,
+  "description": "智行校园·青蓝科技主题与收藏按钮优化版",
+  "scripts": {
+    "start": "node server/launch.js",
+    "test": "node --test tests/*.test.js server/test/*.test.js server/timetable-grid.test.js"
+  }
+}

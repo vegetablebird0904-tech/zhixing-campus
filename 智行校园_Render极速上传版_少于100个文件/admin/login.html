@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>管理员登录 · 智行校园</title>
+  <link rel="stylesheet" href="/admin/styles.css">
+  <script defer src="/admin/login.js"></script>
+</head>
+<body>
+  <section class="access-gate">
+    <form id="access-form" class="access-card">
+      <div class="brand"><span>行</span><div>智行校园<small>ADMINISTRATOR ONLY</small></div></div>
+      <h1 id="access-title">管理员专属登录</h1>
+      <p class="muted">普通用户注册仅用于小程序，不能获得管理权限。此处不提供管理员注册。</p>
+      <div id="access-setup" hidden>
+        <label for="access-code">一次性管理员设置码</label>
+        <input id="access-code" autocomplete="off" placeholder="本机“首次管理员设置码.txt”中的设置码">
+      </div>
+      <label for="access-user">管理员账号</label>
+      <input id="access-user" autocomplete="username" required pattern="[A-Za-z0-9_]{4,32}" maxlength="32" placeholder="4至32位字母、数字或下划线">
+      <label for="access-password">密码</label>
+      <input id="access-password" type="password" autocomplete="current-password" required minlength="12" maxlength="128" placeholder="至少12位，包含字母和数字">
+      <p id="access-error" role="alert"></p>
+      <button id="access-submit" class="primary wide" type="submit" disabled>正在检测服务…</button>
+      <p class="muted">首次管理员只能凭一次性设置码在电脑本机初始化。HTTP仅限可信网络调试，正式使用HTTPS。</p>
+    </form>
+  </section>
+</body>
+</html>

@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: zhixing-campus-admin
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: "node server/launch.js"
+    envVars:
+      - key: CAMPUS_HOST
+        value: "0.0.0.0"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: CAMPUS_ALLOW_PUBLIC_HOST
+        value: "1"
+      - key: CAMPUS_NO_BROWSER
+        value: "1"

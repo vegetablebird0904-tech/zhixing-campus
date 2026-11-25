@@ -1,0 +1,2 @@
+一次性管理员设置码：WGY7DKO_iVkRaHXs6XEDTdPSwpkUA8gZ
+请在本机管理端完成管理员初始化。使用后此文件会删除。

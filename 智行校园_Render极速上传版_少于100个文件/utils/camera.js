@@ -1,0 +1,4 @@
+function clamp(value,min,max){return Math.max(min,Math.min(max,value));}
+function projection(c,width,height,camera){const lat=c.center.latitude,lon=c.center.longitude,cos=Math.cos(lat*Math.PI/180),bounds=c.bounds;const unit=Math.min((width-38)/((bounds[2]-bounds[0])*cos),(height-80)/(bounds[3]-bounds[1]))*camera.scale;const rad=camera.angle||0,cr=Math.cos(rad),sr=Math.sin(rad),ox=width/2+camera.x,oy=height/2+camera.y;return {unit,project(p){const x=(p[0]-lon)*cos*unit,y=-(p[1]-lat)*unit;return [ox+x*cr-y*sr,oy+x*sr+y*cr];},inverse(x,y){const dx=x-ox,dy=y-oy;return {longitude:lon+(dx*cr+dy*sr)/(cos*unit),latitude:lat-(-dx*sr+dy*cr)/unit};}};}
+function segmentDistance(p,a,b){const dx=b[0]-a[0],dy=b[1]-a[1],length=dx*dx+dy*dy;const t=length?clamp(((p[0]-a[0])*dx+(p[1]-a[1])*dy)/length,0,1):0;return Math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy);}
+module.exports={projection,segmentDistance,clamp};
